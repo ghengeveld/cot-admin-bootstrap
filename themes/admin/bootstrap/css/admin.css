@@ -1,0 +1,54 @@
+#adminmain {
+  margin-top: 65px;
+}
+.btn.disabled, .btn[disabled] {
+  opacity: 0.5;
+}
+.btn-mini {
+  line-height:20px;
+}
+.table input {
+  margin:0;
+}
+.table-condensed.table-striped td {
+  line-height: 26px;
+}
+.help-text {
+  padding:5px 0;
+  font-size: 0.8em;
+  line-height: 1.3em;
+  text-align: justify;
+  color: #777;
+}
+.help-text.below {
+  padding-top:0;
+}
+.separator {
+  margin: 10px 0 5px 0;
+  border-bottom: 1px #ccc solid;
+  padding-bottom: 1px;
+}
+.alert.alert-success {
+  position: absolute;
+  z-index: 99999;
+  top: 0;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 3px rgba(0,0,0,0.2) solid;
+  border-top: 0;
+}
+#options {
+  list-style:none;
+  margin:3px 0;
+}
+#options li {
+  padding:2px;
+}
+#options i {
+  margin-top:2px;
+}
