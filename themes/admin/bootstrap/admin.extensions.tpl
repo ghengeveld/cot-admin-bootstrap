@@ -166,7 +166,14 @@
 <!-- END: DETAILS -->
 
 <!-- BEGIN: HOOKS -->
-<h2>{PHP.L.Hooks} ({ADMIN_EXTENSIONS_CNT_HOOK}):</h2>
+<div class="btn-toolbar">
+  <div class="btn-group">
+    <a class="btn" href="{PHP|cot_url('admin', 'm=extensions')}"><i class="icon-list"></i> {PHP.L.ShowAlphabetical}</a>
+    <a class="btn" href="{PHP|cot_url('admin', 'm=extensions&sort=cat')}"><i class="icon-th"></i> {PHP.L.ShowCategories}</a>
+    <a class="btn active" href="{PHP|cot_url('admin', 'm=extensions&a=hooks')}"><i class="icon-leaf"></i> {PHP.L.ShowParts}</a>
+  </div>
+</div>
+<h3>{PHP.L.Hooks} ({ADMIN_EXTENSIONS_CNT_HOOK}):</h3>
 <table class="table table-condensed table-striped">
   <thead>
     <tr>
@@ -190,10 +197,21 @@
 <!-- END: HOOKS -->
 
 <!-- BEGIN: DEFAULT -->
-<p><a href="{ADMIN_EXTENSIONS_HOOKS_URL}">{PHP.L.ListParts}</a></p>
+<div class="btn-toolbar">
+  <div class="btn-group">
+    <a class="btn<!-- IF {ADMIN_EXTENSIONS_SORT_ALP_SEL} --> active<!-- ENDIF -->" href="{ADMIN_EXTENSIONS_SORT_ALP_URL}"><i class="icon-list"></i> {PHP.L.ShowAlphabetical}</a>
+    <a class="btn<!-- IF {ADMIN_EXTENSIONS_SORT_CAT_SEL} --> active<!-- ENDIF -->" href="{ADMIN_EXTENSIONS_SORT_CAT_URL}"><i class="icon-th"></i> {PHP.L.ShowCategories}</a>
+    <a class="btn<!-- IF {PHP.a} == 'hooks' --> active<!-- ENDIF -->" href="{ADMIN_EXTENSIONS_HOOKS_URL}"><i class="icon-leaf"></i> {PHP.L.ShowParts}</a>
+  </div>
+  <div class="btn-group" style="float:right;">
+    <a class="btn<!-- IF !{ADMIN_EXTENSIONS_ONLY_INSTALLED_SEL} --> active<!-- ENDIF -->" href="{PHP.sort_urlp|cot_url('admin', 'm=extensions$this')}"><i class="icon-asterisk"></i> {PHP.L.ShowAll}</a>
+    <a class="btn<!-- IF {ADMIN_EXTENSIONS_ONLY_INSTALLED_SEL} --> active<!-- ENDIF -->" href="{PHP.sort_urlp|cot_url('admin', 'm=extensions&inst=1$this')}"><i class="icon-ok"></i> {PHP.L.ShowInstalled}</a>
+  </div>
+</div>
 
 <!-- BEGIN: SECTION-->
 <h3>{ADMIN_EXTENSIONS_SECTION_TITLE} ({ADMIN_EXTENSIONS_CNT_EXTP}):</h3>
+
 <table class="table table-condensed table-striped">
   <thead>
     <tr>
@@ -207,6 +225,13 @@
   </thead>
   <tbody>
     <!-- BEGIN: ROW -->
+    <!-- BEGIN: ROW_CAT -->
+    <tr>
+      <th colspan="6" style="padding:10px 15px;">
+        {ADMIN_EXTENSIONS_CAT_TITLE}
+      </th>
+    </tr>
+    <!-- END: ROW_CAT -->
     <!-- BEGIN: ROW_ERROR_EXT-->
     <tr>
       <td>{ADMIN_EXTENSIONS_X_ERR}</td>
