@@ -32,7 +32,12 @@
 <!-- END: TABLELIST -->
 
 <!-- BEGIN: TABLE -->
-<h2>{PHP.L.ExtraFields}</h2>
+<h2>{PHP.L.ExtraFields}
+<!-- FOR {K}, {V} IN {PHP.extra_whitelist} -->
+<!-- IF {K} == {PHP.n} AND {V.caption} -->: {V.caption}<!-- ENDIF -->
+<!-- ENDFOR -->
+</h2>
+<p>{PHP.L.adm_extrafields_table} {PHP.n}</p>
 
 <div class="row">
   <div class="span8">
@@ -47,7 +52,8 @@
         </div>
         <div id="extf_{ADMIN_EXTRAFIELDS_ROW_ID}" class="accordion-body collapse<!-- IF {ADMIN_EXTRAFIELDS_ROW_COUNTER_ROW} == 1 --> in<!-- ENDIF -->">
           <div class="accordion-inner">
-            <form action="{ADMIN_EXTRAFIELDS_URL_FORM_EDIT}" method="post" style="margin:5px 0;">
+            <form action="{PHP.n|cot_url('admin', 'm=extrafields&n=$this&a=upd)}" method="post" style="margin:5px 0;">
+              <input type="hidden" name="field_enabled[{ADMIN_EXTRAFIELDS_ROW_ID}]" value="1">
               <div class="row">
                 <div class="span4">
                   <div>
