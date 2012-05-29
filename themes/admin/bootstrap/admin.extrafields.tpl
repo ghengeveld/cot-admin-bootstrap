@@ -113,9 +113,9 @@
 
                   <!-- IF {PHP.row.field_type} == 'input' OR {PHP.row.field_type} == 'textarea' -->
                   <label>{PHP.L.ExtfParser}:</label>
-                  <select name="field_parse" class="span2">
+                  <select name="field_parse[{ADMIN_EXTRAFIELDS_ROW_ID}]" class="span2">
                     <!-- FOR {TYPE} IN {PHP.parse_type} -->
-                    <option value="{TYPE}"><!-- IF {TYPE} == 'Text' -->{PHP.L.None}<!-- ELSE -->{TYPE}<!-- ENDIF --></option>
+                    <option value="{TYPE}"<!-- IF {PHP.row.field_parse} == {TYPE} --> selected="selected"<!-- ENDIF -->><!-- IF {TYPE} == 'Text' -->{PHP.L.None}<!-- ELSE -->{TYPE}<!-- ENDIF --></option>
                     <!-- ENDFOR -->
                   </select>
                   <!-- ENDIF -->
