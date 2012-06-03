@@ -52,7 +52,7 @@
         </div>
         <div id="extf_{ADMIN_EXTRAFIELDS_ROW_ID}" class="accordion-body collapse<!-- IF {ADMIN_EXTRAFIELDS_ROW_COUNTER_ROW} == 1 --> in<!-- ENDIF -->">
           <div class="accordion-inner">
-            <form action="{PHP.n|cot_url('admin', 'm=extrafields&n=$this&a=upd)}" method="post" style="margin:5px 0;">
+            <form action="{PHP.n|cot_url('admin', 'm=extrafields&n=$this&a=upd')}" method="post" style="margin:5px 0;">
               <input type="hidden" name="field_enabled[{ADMIN_EXTRAFIELDS_ROW_ID}]" value="1">
               <div class="row">
                 <div class="span4">
