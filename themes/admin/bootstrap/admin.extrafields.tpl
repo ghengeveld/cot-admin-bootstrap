@@ -71,24 +71,24 @@
                     <div class="span2">
                       <label for="extf_{ADMIN_EXTRAFIELDS_ROW_ID}_type">{PHP.L.ExtfType}:</label>
                       <select name="field_type[{ADMIN_EXTRAFIELDS_ROW_ID}]" id="extf_{ADMIN_EXTRAFIELDS_ROW_ID}_type" class="span2">
-                        <optgroup label="Text">
+                        <optgroup label="{PHP.L.ExtfTypeText}">
                           <option value="input"<!-- IF {PHP.row.field_type} == 'input' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeString}</option>
                           <option value="textarea"<!-- IF {PHP.row.field_type} == 'textarea' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeTextarea}</option>
                         </optgroup>
-                        <optgroup label="Number">
+                        <optgroup label="{PHP.L.ExtfTypeNumber}">
                           <option value="inputint"<!-- IF {PHP.row.field_type} == 'inputint' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeInteger}</option>
                           <option value="double"<!-- IF {PHP.row.field_type} == 'double' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeDouble}</option>
                           <option value="currency"<!-- IF {PHP.row.field_type} == 'currency' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeCurrency}</option>
                           <option value="range"<!-- IF {PHP.row.field_type} == 'range' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeRange}</option>
                         </optgroup>
-                        <optgroup label="Selection">
+                        <optgroup label="{PHP.L.ExtfTypeSelection}">
                           <option value="select"<!-- IF {PHP.row.field_type} == 'select' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeSelect}</option>
                           <option value="checkbox"<!-- IF {PHP.row.field_type} == 'checkbox' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeCheckbox}</option>
                           <option value="checklistbox"<!-- IF {PHP.row.field_type} == 'checklistbox' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeChecklistbox}</option>
                           <option value="radio"<!-- IF {PHP.row.field_type} == 'radio' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeRadio}</option>
                           <option value="country"<!-- IF {PHP.row.field_type} == 'country' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeCountry}</option>
                         </optgroup>
-                        <optgroup label="Other">
+                        <optgroup label="{PHP.L.ExtfTypeOther}">
                           <option value="datetime"<!-- IF {PHP.row.field_type} == 'datetime' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeDatetime}</option>
                           <option value="file"<!-- IF {PHP.row.field_type} == 'file' --> selected="selected"<!-- ENDIF -->>{PHP.L.ExtfTypeFile}</option>
                         </optgroup>
@@ -113,9 +113,9 @@
 
                   <!-- IF {PHP.row.field_type} == 'input' OR {PHP.row.field_type} == 'textarea' -->
                   <label>{PHP.L.ExtfParser}:</label>
-                  <select name="field_parse" class="span2">
+                  <select name="field_parse[{ADMIN_EXTRAFIELDS_ROW_ID}]" class="span2">
                     <!-- FOR {TYPE} IN {PHP.parse_type} -->
-                    <option value="{TYPE}"><!-- IF {TYPE} == 'Text' -->{PHP.L.None}<!-- ELSE -->{TYPE}<!-- ENDIF --></option>
+                    <option value="{TYPE}"<!-- IF {PHP.row.field_parse} == {TYPE} --> selected="selected"<!-- ENDIF -->><!-- IF {TYPE} == 'Text' -->{PHP.L.None}<!-- ELSE -->{TYPE}<!-- ENDIF --></option>
                     <!-- ENDFOR -->
                   </select>
                   <!-- ENDIF -->
@@ -186,24 +186,24 @@
         <div class="span2">
           <label for="extf_field_type">{PHP.L.ExtfType}:</label>
           <select name="field_type" id="extf_field_type" class="span2">
-            <optgroup label="Text">
+            <optgroup label="{PHP.L.ExtfTypeText}">
               <option value="input">{PHP.L.ExtfTypeString}</option>
               <option value="textarea">{PHP.L.ExtfTypeTextarea}</option>
             </optgroup>
-            <optgroup label="Number">
+            <optgroup label="{PHP.L.ExtfTypeNumber}">
               <option value="inputint">{PHP.L.ExtfTypeInteger}</option>
               <option value="double">{PHP.L.ExtfTypeDouble}</option>
               <option value="currency">{PHP.L.ExtfTypeCurrency}</option>
               <option value="range">{PHP.L.ExtfTypeRange}</option>
             </optgroup>
-            <optgroup label="Selection">
+            <optgroup label="{PHP.L.ExtfTypeSelection}">
               <option value="select">{PHP.L.ExtfTypeSelect}</option>
               <option value="checkbox">{PHP.L.ExtfTypeCheckbox}</option>
               <option value="checklistbox">{PHP.L.ExtfTypeChecklistbox}</option>
               <option value="radio">{PHP.L.ExtfTypeRadio}</option>
               <option value="country">{PHP.L.ExtfTypeCountry}</option>
             </optgroup>
-            <optgroup label="Other">
+            <optgroup label="{PHP.L.ExtfTypeOther}">
               <option value="datetime">{PHP.L.ExtfTypeDatetime}</option>
               <option value="file">{PHP.L.ExtfTypeFile}</option>
             </optgroup>
@@ -302,7 +302,7 @@
             <label>{PHP.L.ExtfMaxYear}:</label>
             <input type="text" name="datemax" class="span1">
           </div>
-          <div class="span1">
+          <div class="span2">
             <label>{PHP.L.ExtfFormat}:</label>
             <input type="text" name="dateformat" class="span2" value="{PHP.Ldt.datetime_medium}">
           </div>
