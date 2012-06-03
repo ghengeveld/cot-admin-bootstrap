@@ -4,6 +4,12 @@
 .btn.disabled, .btn[disabled] {
   opacity: 0.5;
 }
+.btn i {
+  margin-top: 1px;
+}
+.btn-mini i {
+  margin-top: 0;
+}
 .btn-mini {
   line-height:20px;
 }

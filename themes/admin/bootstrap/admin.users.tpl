@@ -4,9 +4,9 @@
 
 <!-- IF !{PHP.g} -->
 <div class="btn-group" style="float:right;">
-  <a href="{PHP|cot_url('users')}" title="{PHP.L.ListAllUsers}" class="btn"><i class="icon-share-alt"></i> {PHP.L.ListAllUsers}</a>
-  <a href="{ADMIN_USERS_EXTRAFIELDS_URL}" title="{PHP.L.ExtraFields}" class="btn"><i class="icon-list-alt"></i> {PHP.L.ExtraFields}</a>
-  <a href="{ADMIN_USERS_URL}" title="{PHP.L.Configuration}" class="btn"><i class="icon-cog"></i> {PHP.L.Configuration}</a>
+  <a class="btn" href="{PHP|cot_url('users')}" title="{PHP.L.ListAllUsers}"><i class="icon-share-alt"></i> {PHP.L.ListAllUsers}</a>
+  <a class="btn" href="{ADMIN_USERS_EXTRAFIELDS_URL}" title="{PHP.L.ExtraFields}"><i class="icon-list-alt"></i> {PHP.L.ExtraFields}</a>
+  <a class="btn" href="{ADMIN_USERS_URL}" title="{PHP.L.Configuration}"><i class="icon-cog"></i> {PHP.L.Configuration}</a>
 </div>
 <!-- ENDIF -->
 

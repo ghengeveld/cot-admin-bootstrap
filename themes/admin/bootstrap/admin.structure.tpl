@@ -27,7 +27,7 @@
 <!-- BEGIN: MAIN -->
 <!-- BEGIN: DEFAULT -->
 <div class="btn-group" style="float:right;">
-  <a href="{ADMIN_STRUCTURE_URL_EXTRAFIELDS}" class="btn"><i class="icon-list-alt"></i> {PHP.L.adm_extrafields_desc}</a>
+  <a href="{ADMIN_STRUCTURE_URL_EXTRAFIELDS}" class="btn"><i class="icon-list-alt"></i> {PHP.L.ExtraFields}</a>
   <a href="{ADMIN_PAGE_STRUCTURE_RESYNCALL}" class="btn" title="{PHP.L.adm_tpl_resyncalltitle}"><i class="icon-refresh"></i> {PHP.L.Resync}</a>
 </div>
 

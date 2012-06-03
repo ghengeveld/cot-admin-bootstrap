@@ -114,8 +114,25 @@ $L['ExtfRangeIntInfo'] = 'Provide two integers.';
 $L['ExtfRangeFloatInfo'] = 'Provide two decimal numbers.';
 $L['ExtfSeparator'] = 'Separator';
 
+/* Pages */
+$L['Draft'] = 'Draft';
+$L['Pending'] = 'Pending';
+$L['Approved'] = 'Approved';
+$L['Published'] = 'Published';
+$L['Expired'] = 'Expired';
+
+$L['AllPages'] = 'All pages';
+$L['PendingPages'] = 'Pages pending validation';
+$L['ValidatedPages'] = 'Validated pages';
+
+$L['Unvalidate'] = 'Invalidate';
+
+/* Misc */
 $L['Enable'] = 'Enable';
 $L['Disable'] = 'Disable';
+$L['SortBy'] = 'Sort by';
+$L['Go'] = 'Go';
+$L['WithSelected'] = 'With selected';
 
 $L['ShowMore'] = 'Show more';
 $L['ShowLess'] = 'Show less';

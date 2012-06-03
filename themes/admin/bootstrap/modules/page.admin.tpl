@@ -2,89 +2,121 @@
 
 {FILE "{PHP.cfg.themes_dir}/admin/bootstrap/warnings.tpl"}
 
-<h2>{PHP.L.Pages} ({ADMIN_PAGE_TOTALDBPAGES})</h2>
-
-<div class=" button-toolbar block">
-  <a title="{PHP.L.Configuration}" href="{ADMIN_PAGE_URL_CONFIG}" class="button">{PHP.L.Configuration}</a>
-  <a href="{ADMIN_PAGE_URL_EXTRAFIELDS}" class="button">{PHP.L.adm_extrafields_desc}</a>
-  <a href="{ADMIN_PAGE_URL_STRUCTURE}" class="button">{PHP.L.Categories}</a></li>
-<a href="{ADMIN_PAGE_URL_ADD}" class="button special">{PHP.L.page_addtitle}</a>
+<div class="btn-toolbar">
+  <div class="btn-group">
+    <a class="btn<!-- IF {PHP.filter} == 'all' --> active<!-- ENDIF -->" href="{PHP|cot_url('admin', 'm=page&filter=all')}"><i class="icon-asterisk"></i> {PHP.L.All}</a>
+    <a class="btn<!-- IF {PHP.filter} == 'valqueue' --> active<!-- ENDIF -->" href="{PHP|cot_url('admin', 'm=page&filter=valqueue')}"><i class="icon-pause"></i> {PHP.L.Pending}</a>
+    <a class="btn<!-- IF {PHP.filter} == 'validated' --> active<!-- ENDIF -->" href="{PHP|cot_url('admin', 'm=page&filter=validated')}"><i class="icon-ok"></i> {PHP.L.Approved}</a>
+  </div>
+  <div class="btn-group" style="float:right;">
+    <a class="btn" href="{ADMIN_PAGE_URL_CONFIG}" title="{PHP.L.Configuration}"><i class="icon-cog"></i> {PHP.L.Configuration}</a>
+    <a class="btn" href="{ADMIN_PAGE_URL_EXTRAFIELDS}" title="{PHP.L.ExtraFields}"><i class="icon-list-alt"></i> {PHP.L.ExtraFields}</a>
+    <a class="btn" href="{ADMIN_PAGE_URL_STRUCTURE}"><i class="icon-list"></i> {PHP.L.Categories}</a>
+    <a class="btn" href="{ADMIN_PAGE_URL_ADD}"><i class="icon-plus"></i> {PHP.L.page_addtitle}</a>
+  </div>
 </div>
-<div class="block">
-  <h3>{PHP.L.Pages}:</h3>
-  <form id="form_valqueue" name="form_valqueue" method="post" action="{ADMIN_PAGE_FORM_URL}">
-    <table class="cells">
+
+<!-- IF {ADMIN_PAGE_TOTALITEMS} > 1 -->
+<div style="float:right;">
+  <form action="{PHP|cot_url('admin')}" class="form-horizontal">
+    {PHP.L.SortBy}: 
+    <input type="hidden" name="m" value="page">
+    <input type="hidden" name="filter" value="{PHP.filter}">
+    <select name="sorttype" class="span2">
+      <!-- FOR {K}, {V} IN {PHP.sort_type} -->
+      <option value="{K}">{V}</option>
+      <!-- ENDFOR -->
+    </select>
+    <select name="sortway" class="span2">
+      <option value="asc">Ascending</option>
+      <option value="desc" selected="selected">Descending</option>
+    </select>
+    <button type="submit" class="btn">{PHP.L.Go}</button>
+  </form>
+</div>
+<!-- ENDIF -->
+
+<h2>
+  <!-- IF {PHP.filter} == 'all' -->{PHP.L.AllPages}<!-- ENDIF -->
+  <!-- IF {PHP.filter} == 'valqueue' -->{PHP.L.PendingPages}<!-- ENDIF -->
+  <!-- IF {PHP.filter} == 'validated' -->{PHP.L.ValidatedPages}<!-- ENDIF -->
+</h2>
+
+<form method="post" action="{ADMIN_PAGE_FORM_URL}">
+  <table class="table table-condensed">
+    <thead>
       <tr>
-        <td class="right" colspan="4">
-          <input type="hidden" name="paction" value="" />
-          <!-- IF {ADMIN_PAGE_TOTALITEMS} > 1 -->{PHP.L.adm_sort} {ADMIN_PAGE_ORDER} {ADMIN_PAGE_WAY};<!-- ENDIF --> {PHP.L.Show} {ADMIN_PAGE_FILTER}
-          <input name="paction" type="submit" value="{PHP.L.Filter}" onclick="this.form.paction.value=this.value" />
-        </td>
+        <th style="width:15px;"><input type="checkbox" class="checkbox" onclick="$(':checkbox').attr('checked', this.checked);" /></th>
+        <th style="width:20px;">{PHP.L.Id}</th>
+        <th>{PHP.L.Title}</th>
+        <th style="width:175px;">{PHP.L.Category}</th>
+        <th style="width:175px;">{PHP.L.Alias}</th>
+        <th style="width:125px;">{PHP.L.Status}</th>
+        <th style="width:150px;">{PHP.L.Action}</th>
       </tr>
-      <tr>
-        <td class="coltop width5">
-          <!-- IF {PHP.cfg.jquery} -->
-          <input name="allchek" class="checkbox" type="checkbox" value="" onclick="$('.checkbox').attr('checked', this.checked);" />
-          <!-- ENDIF -->
-        </td>
-        <td class="coltop width5">{PHP.L.Id}</td>
-        <td class="coltop width65">{PHP.L.Title}</td>
-        <td class="coltop width25">{PHP.L.Action}</td>
-      </tr>
+    </thead>
+    <tbody>
       <!-- BEGIN: PAGE_ROW -->
-      <tr>
-        <td class="centerall {ADMIN_PAGE_ODDEVEN}">
-          <input name="s[{ADMIN_PAGE_ID}]" type="checkbox" class="checkbox" />
+      <tr class="{ADMIN_PAGE_ODDEVEN}">
+        <td><input name="s[{ADMIN_PAGE_ID}]" type="checkbox" class="checkbox"></td>
+        <td>{ADMIN_PAGE_ID}</td>
+        <td>{ADMIN_PAGE_SHORTTITLE}</td>
+        <td>{ADMIN_PAGE_CATPATH_SHORT}</td>
+        <td>{ADMIN_PAGE_ALIAS}</td>
+        <td>
+          <!-- IF {ADMIN_PAGE_STATUS} == 'draft' --><i class="icon-tint"></i><!-- ENDIF -->
+          <!-- IF {ADMIN_PAGE_STATUS} == 'pending' --><i class="icon-inbox"></i><!-- ENDIF -->
+          <!-- IF {ADMIN_PAGE_STATUS} == 'approved' --><i class="icon-time"></i><!-- ENDIF -->
+          <!-- IF {ADMIN_PAGE_STATUS} == 'published' --><i class="icon-eye-open"></i><!-- ENDIF -->
+          <!-- IF {ADMIN_PAGE_STATUS} == 'expired' --><i class="icon-eye-close"></i><!-- ENDIF -->
+          {ADMIN_PAGE_LOCALSTATUS}
         </td>
-        <td class="centerall {ADMIN_PAGE_ODDEVEN}">
-          {ADMIN_PAGE_ID}
-        </td>
-        <td class="{ADMIN_PAGE_ODDEVEN}">
-          <div id="mor_{PHP.ii}" class='mor_info_on_off'>
-            <span class="strong" style="cursor:hand;">{ADMIN_PAGE_SHORTTITLE}</span>
-            <div class="moreinfo">
-              <hr />
-              <table class="flat">
-                <tr>
-                  <td class="width20">{PHP.L.Category}:</td>
-                  <td class="width80">{ADMIN_PAGE_CATPATH_SHORT}</td>
-                </tr>
-                <tr>
-                  <td>{PHP.L.Description}:</td>
-                  <td>{ADMIN_PAGE_DESC}</td>
-                </tr>
-                <tr>
-                  <td>{PHP.L.Text}:</td>
-                  <td>{ADMIN_PAGE_TEXT}</td>
-                </tr>
-              </table>
-            </div>
+        <td>
+          <div class="btn-group">
+            <!-- IF {ADMIN_PAGE_STATUS} == 'expired' -->
+            <a class="btn btn-mini disabled"><i class="icon-share-alt"></i> {PHP.L.Open}</a>
+            <!-- ELSE -->
+            <a class="btn btn-mini" title="{PHP.L.Open}" href="{ADMIN_PAGE_ID_URL}"><i class="icon-share-alt"></i> {PHP.L.Open}</a>
+            <!-- ENDIF -->
+            
+            <!-- IF {ADMIN_PAGE_STATUS} == 'draft' AND {PHP.row.page_ownerid} != {PHP.usr.id} -->
+            <a class="btn btn-mini disabled"><i class="icon-pencil"></i></a>
+            <!-- ELSE -->
+            <a class="btn btn-mini" title="{PHP.L.Edit}" href="{ADMIN_PAGE_URL_FOR_EDIT}"><i class="icon-pencil"></i></a>
+            <!-- ENDIF -->
+            
+            <!-- IF {ADMIN_PAGE_STATUS} == 'draft' -->
+            <a class="btn btn-mini btn-success disabled"><i class="icon-ok icon-white"></i></a>
+            <!-- ENDIF -->
+            <!-- IF {ADMIN_PAGE_STATUS} == 'pending' -->
+            <a class="btn btn-mini btn-success" title="{PHP.L.Validate}" href="{ADMIN_PAGE_URL_FOR_VALIDATED}"><i class="icon-ok icon-white"></i></a>
+            <!-- ENDIF -->
+            <!-- IF {ADMIN_PAGE_STATUS} == 'approved' OR {ADMIN_PAGE_STATUS} == 'published' -->
+            <a class="btn btn-mini btn-warning" title="{PHP.L.Unvalidate}" href="{ADMIN_PAGE_URL_FOR_UNVALIDATE}"><i class="icon-pause icon-white"></i></a>
+            <!-- ENDIF -->
+            <!-- IF {ADMIN_PAGE_STATUS} == 'expired' -->
+            <a class="btn btn-mini btn-warning disabled"><i class="icon-pause icon-white"></i></a>
+            <!-- ENDIF -->
+            
+            <a class="btn btn-mini btn-danger" title="{PHP.L.Delete}" href="{ADMIN_PAGE_URL_FOR_DELETED}"><i class="icon-remove icon-white"></i></a>
           </div>
-        </td>
-        <td class="action {ADMIN_PAGE_ODDEVEN}">
-          <!-- IF {PHP.row.page_state} == 1 --><a title="{PHP.L.Validate}" href="{ADMIN_PAGE_URL_FOR_VALIDATED}" class="confirmLink button">{PHP.L.Validate}</a><!-- ENDIF -->
-          <a title="{PHP.L.Delete}" href="{ADMIN_PAGE_URL_FOR_DELETED}" class="confirmLink button">{PHP.L.short_delete}</a>
-          <a title="{PHP.L.Open}" href="{ADMIN_PAGE_ID_URL}" target="_blank" class="button special">{PHP.L.short_open}</a>
-          <a title="{PHP.L.Edit}" href="{ADMIN_PAGE_URL_FOR_EDIT}" target="_blank" class="button">{PHP.L.Edit}</a>
         </td>
       </tr>
       <!-- END: PAGE_ROW -->
       <!-- IF {PHP.is_row_empty} -->
       <tr>
-        <td class="centerall" colspan="4">{PHP.L.None}</td>
+        <td colspan="6">{PHP.L.None}</td>
       </tr>
       <!-- ENDIF -->
-      <tr>
-        <td class="valid" colspan="4">
-          <!-- IF {PHP.filter} != {PHP.L.adm_validated} --><input name="paction" type="submit" value="{PHP.L.Validate}" onclick="this.form.paction.value=this.value" class="confirm" /><!-- ENDIF -->
-          <input name="paction" type="submit" value="{PHP.L.Delete}" onclick="this.form.paction.value=this.value" />
-        </td>
-      </tr>
-    </table>
-    <p class="paging">
-      {ADMIN_PAGE_PAGINATION_PREV}{ADMIN_PAGE_PAGNAV}{ADMIN_PAGE_PAGINATION_NEXT}<span>{PHP.L.Total}: {ADMIN_PAGE_TOTALITEMS}, {PHP.L.Onpage}: {ADMIN_PAGE_ON_PAGE}</span>
-    </p>
-  </form>
+    </tbody>
+  </table>
+  <p>{PHP.L.WithSelected}:</p>
+  <!-- IF {PHP.filter} != {PHP.L.adm_validated} --><button type="submit" class="btn btn-success" name="paction" value="{PHP.L.Validate}"><i class="icon-ok icon-white"></i> {PHP.L.Validate}</button><!-- ENDIF -->
+  <button type="submit" class="btn btn-danger" name="paction" value="{PHP.L.Delete}"><i class="icon-remove icon-white"></i> {PHP.L.Delete}</button>
+</form>
+
+<div class="pagination">
+  {ADMIN_PAGE_PAGINATION_PREV}{ADMIN_PAGE_PAGNAV}{ADMIN_PAGE_PAGINATION_NEXT}
 </div>
 
 <!-- END: MAIN -->
