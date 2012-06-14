@@ -9,8 +9,8 @@
     <a class="btn<!-- IF {PHP.filter} == 'validated' --> active<!-- ENDIF -->" href="{PHP|cot_url('admin', 'm=page&filter=validated')}"><i class="icon-ok"></i> {PHP.L.Approved}</a>
   </div>
   <div class="btn-group" style="float:right;">
-    <a class="btn" href="{ADMIN_PAGE_URL_CONFIG}" title="{PHP.L.Configuration}"><i class="icon-cog"></i> {PHP.L.Configuration}</a>
-    <a class="btn" href="{ADMIN_PAGE_URL_EXTRAFIELDS}" title="{PHP.L.ExtraFields}"><i class="icon-list-alt"></i> {PHP.L.ExtraFields}</a>
+    <a class="btn" href="{ADMIN_PAGE_URL_CONFIG}"><i class="icon-cog"></i> {PHP.L.Configuration}</a>
+    <a class="btn" href="{ADMIN_PAGE_URL_EXTRAFIELDS}"><i class="icon-list-alt"></i> {PHP.L.ExtraFields}</a>
     <a class="btn" href="{ADMIN_PAGE_URL_STRUCTURE}"><i class="icon-list"></i> {PHP.L.Categories}</a>
     <a class="btn" href="{ADMIN_PAGE_URL_ADD}"><i class="icon-plus"></i> {PHP.L.page_addtitle}</a>
   </div>
@@ -43,7 +43,7 @@
 </h2>
 
 <form method="post" action="{ADMIN_PAGE_FORM_URL}">
-  <table class="table table-condensed">
+  <table class="table table-striped table-condensed">
     <thead>
       <tr>
         <th style="width:15px;"><input type="checkbox" class="checkbox" onclick="$(':checkbox').attr('checked', this.checked);" /></th>

@@ -32,7 +32,7 @@
     <tr>
       <td>
         <a href="{ADMIN_USERS_ROW_GRP_JUMPTO_URL}" title="{PHP.L.ListMaingroup}">
-          #{ADMIN_USERS_ROW_GRP_ID}: {ADMIN_USERS_ROW_GRP_TITLE}
+          #{ADMIN_USERS_ROW_GRP_ID}: {ADMIN_USERS_ROW_GRP_NAME}
         </a>
       </td>
       <td>{ADMIN_USERS_ROW_GRP_COUNT_MEMBERS}</td>
@@ -73,11 +73,11 @@
       <div class="row">
         <div class="span2">
           <label>{PHP.L.GroupName}:</label>
-          <input type="text" name="rtitle" value="{PHP.rgroups.grp_title}" maxlength="64" class="span2">
+          <input type="text" name="rname" value="{PHP.rgroups.grp_name}" maxlength="64" class="span2">
         </div>
         <div class="span2">
-          <label>{PHP.L.Alias}:</label>
-          <input type="text" name="ralias" value="{PHP.rgroups.grp_alias}" maxlength="24" class="span2">
+          <label>{PHP.L.Title}:</label>
+          <input type="text" name="rtitle" value="{PHP.rgroups.grp_title}" maxlength="64" class="span2">
         </div>
         <div class="span1">
           <label>{PHP.L.Level}:</label>
@@ -88,13 +88,16 @@
           </select>
         </div>
       </div>
+      <label>{PHP.L.Description}:</label>
+      <input type="text" name="rdesc" value="{PHP.rgroups.grp_desc}" maxlength="64" class="span5">
       <div class="row">
-        <div class="span5">
-          <label>{PHP.L.Description}:</label>
-          <input type="text" name="rdesc" value="{PHP.rgroups.grp_desc}" maxlength="64" class="span5">
-
+        <div class="span3">
           <label>{PHP.L.Icon}:</label>
-          <input type="text" name="ricon" value="{PHP.rgroups.grp_icon}" maxlength="128" class="span5">
+          <input type="text" name="ricon" value="{PHP.rgroups.grp_icon}" maxlength="128" class="span3">
+        </div>
+        <div class="span2">
+          <label>{PHP.L.Alias}:</label>
+          <input type="text" name="ralias" value="{PHP.rgroups.grp_alias}" maxlength="24" class="span2">
         </div>
       </div>
       <div class="row" style="padding-top:10px;">
@@ -173,6 +176,14 @@
     <button type="reset" class="btn">{PHP.L.Reset}</button>
   </div>
 </form>
+
+<script type="text/javascript">
+$(function(){
+  $('input[name=rname]').keyup(function(){
+    $('input[name=ralias]').val($(this).val().toLowerCase());
+  });
+});
+</script>
 <!-- END: ADMIN_USERS_DEFAULT -->
 
 <!-- BEGIN: ADMIN_USERS_EDIT -->
@@ -186,7 +197,7 @@
   <!-- ENDIF -->
 </div>
 
-<h2>{PHP.L.Group}: {PHP.row.grp_title}</h2>
+<h2>{PHP.L.Group}: {PHP.row.grp_name}</h2>
 <p>{ADMIN_USERS_EDITFORM_GRP_MEMBERSCOUNT|cot_declension($this, 'Users')} {PHP.L.InThisGroup}</p>
 
 <form action="{ADMIN_USERS_EDITFORM_URL}" method="post">
@@ -196,11 +207,11 @@
       <div class="row">
         <div class="span2">
           <label>{PHP.L.GroupName}:</label>
-          <input type="text" name="rtitle" value="{PHP.row.grp_title}" maxlength="64" class="span2">
+          <input type="text" name="rname" value="{PHP.row.grp_name}" maxlength="64" class="span2">
         </div>
         <div class="span2">
-          <label>{PHP.L.Alias}:</label>
-          <input type="text" name="ralias" value="{PHP.row.grp_alias}" maxlength="24" class="span2">
+          <label>{PHP.L.Title}:</label>
+          <input type="text" name="rtitle" value="{PHP.row.grp_title}" maxlength="64" class="span2">
         </div>
         <div class="span1">
           <label>{PHP.L.Level}:</label>
@@ -211,13 +222,16 @@
           </select>
         </div>
       </div>
+      <label>{PHP.L.Description}:</label>
+      <input type="text" name="rdesc" value="{PHP.row.grp_desc}" maxlength="64" class="span5">
       <div class="row">
-        <div class="span5">
-          <label>{PHP.L.Description}:</label>
-          <input type="text" name="rdesc" value="{PHP.row.grp_desc}" maxlength="64" class="span5">
-
+        <div class="span3">
           <label>{PHP.L.Icon}:</label>
-          <input type="text" name="ricon" value="{PHP.row.grp_icon}" maxlength="128" class="span5">
+          <input type="text" name="ricon" value="{PHP.row.grp_icon}" maxlength="128" class="span3">
+        </div>
+        <div class="span2">
+          <label>{PHP.L.Alias}:</label>
+          <input type="text" name="ralias" value="{PHP.row.grp_alias}" maxlength="24" class="span2">
         </div>
       </div>
       <div class="row" style="padding-top:10px;">
@@ -291,5 +305,20 @@
   </div>
 </form>
 <!-- END: ADMIN_USERS_EDIT -->
+
+<script type="text/javascript">
+$(function(){
+  $('input[name=rname]').keyup(function(){
+    $('input[name=ralias]').val($(this).val().toLowerCase());
+  });
+  $('input[name=rskiprights]').click(function(){
+    if ($(this).val() == 1){
+      $('select[name=rcopyrightsfrom]').attr('disabled', 'disabled');
+    } else {
+      $('select[name=rcopyrightsfrom]').removeAttr('disabled');
+    }
+  });
+});
+</script>
 
 <!-- END: MAIN -->

@@ -10,7 +10,7 @@
 
   <div class="row">
     <div class="span9">
-      <table class="table table-condensed table-striped">
+      <table class="table table-striped table-condensed">
         <thead>
           <tr>
             <th>{USERS_TOP_NAME}</th>

@@ -50,7 +50,7 @@ $L['DisableRights'] = 'Disable rights';
 $L['DisableRightsInfo'] = "Rightless groups are useful when the group doesn't relate to a role in the system. For example you can use this to create named teams for a sports or gaming website, where all members have the same rights regardless of the team they are in. Rightless groups cannot be used as main group.";
 $L['MaxFileSize'] = 'Maximum file size';
 $L['FileSpace'] = 'Total file space allowance';
-$L['FileSpaceInfo'] = 'Space allowances are not summed up if a user is in multiple groups. The highest allowance is used.';
+$L['FileSpaceInfo'] = "Total file space allowances are summed up if a user is in multiple groups. The maximum filesize is not, instead it's the highest of the user's groups and can never be higher than upload_max_filesize, post_max_size and memory_limit, configured in php.ini.";
 
 /* Extra Fields */
 $L['ExtraFields'] = 'Extra Fields';
@@ -113,6 +113,20 @@ $L['ExtfFormat'] = 'Format for <a href="http://php.net/manual/en/function.date.p
 $L['ExtfRangeIntInfo'] = 'Provide two integers.';
 $L['ExtfRangeFloatInfo'] = 'Provide two decimal numbers.';
 $L['ExtfSeparator'] = 'Separator';
+
+/* Infos */
+$L['SystemInfo'] = 'System information';
+$L['Webserver'] = 'Webserver';
+$L['ClockConfig'] = 'Clock configuration';
+$L['RawTime'] = 'Raw UTC/GMT time';
+$L['GMTTime'] = "GMT time (Cotonti's internal reference)";
+$L['LocalTime'] = "Local time, based on the timezone in your profile.";
+$L['TimeHelp'] = "Adjust the server's time zone configuration to correct the clock settings if necessary. Cotonti does not account for Daylight Saving Time.";
+$L['adm_help_versions'] = '';
+$L['ServerVars'] = 'Server variables';
+
+/* Polls */
+$L['PollQuestion'] = 'Poll question';
 
 /* Pages */
 $L['Draft'] = 'Draft';

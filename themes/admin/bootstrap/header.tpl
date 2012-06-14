@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="{PHP.cfg.themes_dir}/admin/bootstrap/css/bootstrap-responsive.css" type="text/css">
 <link rel="stylesheet" href="{PHP.cfg.themes_dir}/admin/bootstrap/css/admin.css" type="text/css">
 <title>{HEADER_TITLE}</title>
+<script src="js/jquery.min.js"></script>
+<script src="{PHP.cfg.themes_dir}/admin/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
