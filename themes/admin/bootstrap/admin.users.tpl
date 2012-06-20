@@ -32,7 +32,7 @@
     <tr>
       <td>
         <a href="{ADMIN_USERS_ROW_GRP_JUMPTO_URL}" title="{PHP.L.ListMaingroup}">
-          #{ADMIN_USERS_ROW_GRP_ID}: {ADMIN_USERS_ROW_GRP_NAME}
+          #{ADMIN_USERS_ROW_GRP_ID}: {ADMIN_USERS_ROW_GRP_TITLE}
         </a>
       </td>
       <td>{ADMIN_USERS_ROW_GRP_COUNT_MEMBERS}</td>
