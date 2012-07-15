@@ -1,7 +1,5 @@
 <!-- BEGIN: LIST -->
 
-{FILE "{PHP.cfg.themes_dir}/admin/bootstrap/warnings.tpl"}
-
 <h2>{PHP.L.Structure}</h2>
 <ul class="nav nav-tabs nav-stacked">
   <!-- BEGIN: ADMIN_STRUCTURE_EXT -->
@@ -25,6 +23,9 @@
 <!-- END: LIST -->
 
 <!-- BEGIN: MAIN -->
+
+{FILE "{PHP.cfg.themes_dir}/admin/bootstrap/warnings.tpl"}
+
 <!-- BEGIN: DEFAULT -->
 <div class="btn-group" style="float:right;">
   <a href="{ADMIN_STRUCTURE_URL_EXTRAFIELDS}" class="btn"><i class="icon-list-alt"></i> {PHP.L.ExtraFields}</a>
