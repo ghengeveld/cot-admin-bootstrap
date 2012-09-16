@@ -138,8 +138,11 @@ $L['Expired'] = 'Expired';
 $L['AllPages'] = 'All pages';
 $L['PendingPages'] = 'Pages pending validation';
 $L['ValidatedPages'] = 'Validated pages';
-
 $L['Unvalidate'] = 'Invalidate';
+
+$L['NewPage'] = 'New page';
+$L['FileDownload'] = 'File download';
+$L['FileURL'] = 'File URL';
 
 /* Misc */
 $L['Enable'] = 'Enable';

@@ -71,4 +71,9 @@ $R['input_file_empty'] = '<input type="file" name="{$name}" {$attrs} /><span cla
 
 $R['users_link_sort'] = '<a href="{$asc_url}" rel="nofollow"><i class="icon-circle-arrow-down"></i></a><a href="{$desc_url}" rel="nofollow"><i class="icon-circle-arrow-up"></i></a> {$text}';
 
+$R['input_date'] =  '{$day} {$month} {$year}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$hour} : {$minute}';
+$R['input_select_rpagebegin'] = '<select name="{$name}" class="input-small">{$options}</select>{$error}';
+$R['input_select_rpageexpire'] = '<select name="{$name}" class="input-small">{$options}</select>{$error}';
+$R['input_select_rpagefile'] = '<select name="{$name}" class="span2">{$options}</select>';
+
 ?>
