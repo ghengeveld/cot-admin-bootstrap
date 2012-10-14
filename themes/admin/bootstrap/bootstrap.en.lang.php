@@ -34,6 +34,9 @@ $L['ShowCustomRights'] = 'Show custom rights';
 /* Usergroups / Users */
 $L['Usergroups'] = 'Usergroups';
 $L['GroupName'] = 'Group name';
+$L['CreateNewUser'] = 'Create new user';
+$L['CreateNewUserAccount'] = 'Create a new user account';
+$L['PasswordTwice'] = 'Password (twice)';
 $L['ListAllUsers'] = 'Show all users';
 $L['ListMaingroup'] = 'Show users in main group';
 $L['ListGroup'] = 'Show users in group';
@@ -124,6 +127,7 @@ $L['LocalTime'] = "Local time, based on the timezone in your profile.";
 $L['TimeHelp'] = "Adjust the server's time zone configuration to correct the clock settings if necessary. Cotonti does not account for Daylight Saving Time.";
 $L['adm_help_versions'] = '';
 $L['ServerVars'] = 'Server variables';
+$L['GraphicsLibrary'] = 'GD Graphics Library';
 
 /* Polls */
 $L['PollQuestion'] = 'Poll question';
@@ -144,17 +148,25 @@ $L['NewPage'] = 'New page';
 $L['FileDownload'] = 'File download';
 $L['FileURL'] = 'File URL';
 
+/* PFS */
+$L['PFSList'] = 'List of Personal File Spaces';
+$L['GDInfo'] = 'GD library info';
+
 /* Misc */
 $L['Enable'] = 'Enable';
 $L['Disable'] = 'Disable';
 $L['SortBy'] = 'Sort by';
 $L['Go'] = 'Go';
 $L['WithSelected'] = 'With selected';
+$L['Ratio'] = 'Ratio';
+$L['IPSearch_Search'] = 'Search for an IP in the users database:';
+$L['IPSearch_Results'] = 'Search results';
 
 $L['ShowMore'] = 'Show more';
 $L['ShowLess'] = 'Show less';
 
 $Ls['Users'] = array('users','user');
 $Ls['Files'] = array('files','file');
+$Ls['Hits'] = array('hits','hit');
 
 ?>

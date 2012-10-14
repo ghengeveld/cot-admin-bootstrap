@@ -2,7 +2,7 @@
 
 {FILE "{PHP.cfg.themes_dir}/admin/bootstrap/warnings.tpl"}
 
-<div class="btn-group" style="float:right;">
+<div class="btn-group pull-right">
   <a href="{ADMIN_CACHE_URL_REFRESH}" class="btn"><i class="icon-refresh"></i> {PHP.L.Refresh}</a>
   <!-- IF {PHP.a} == 'showall' -->
   <a href="{ADMIN_CACHE_URL_REFRESH}" class="btn"><i class="icon-zoom-out"></i> {PHP.L.ShowLess}</a>

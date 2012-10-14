@@ -18,7 +18,7 @@
 <script src="{PHP.cfg.themes_dir}/admin/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
+  <div class="navbar navbar-static-top">
     <div class="navbar-inner">
       <div class="container">
         <a href="{PHP.cfg.mainurl}" title="{PHP.L.hea_viewsite}" class="brand">{PHP.cfg.maintitle}</a>

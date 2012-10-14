@@ -105,7 +105,7 @@
       <!-- END: PAGE_ROW -->
       <!-- IF {PHP.is_row_empty} -->
       <tr>
-        <td colspan="6">{PHP.L.None}</td>
+        <td colspan="7">{PHP.L.None}</td>
       </tr>
       <!-- ENDIF -->
     </tbody>

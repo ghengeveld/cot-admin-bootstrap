@@ -74,8 +74,7 @@
   <div id="options">
     <!-- BEGIN: OPTIONS -->
     <div class="input-append">
-      {EDIT_POLL_OPTION_TEXT}
-      <button class="btn deloption"><i class="icon-remove"></i></button>
+      {EDIT_POLL_OPTION_TEXT}<button class="btn deloption"><i class="icon-remove"></i></button>
     </div>
     <!-- END: OPTIONS -->
   </div>

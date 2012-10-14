@@ -1,62 +1,70 @@
 <!-- BEGIN: MAIN -->
 
-<div class="block content">
-	<h2 class="users">{USERS_DETAILS_TITLE}<!-- BEGIN: USERS_DETAILS_ADMIN --> &nbsp; [ {USERS_DETAILS_ADMIN_EDIT} ]<!-- END: USERS_DETAILS_ADMIN --></h2>
-	<div class="blockbody">
-		<table class="cells">
-			<tr>
-				<td class="width30">{PHP.L.users_sendpm}:</td>
-				<td class="width70">{USERS_DETAILS_PM}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Maingroup}:</td>
-				<td>{USERS_DETAILS_MAINGRP}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Groupsmembership}:</td>
-				<td>{PHP.L.Maingroup}:<br />&nbsp;{PHP.out.img_down}<br />{USERS_DETAILS_GROUPS}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Country}:</td>
-				<td>{USERS_DETAILS_COUNTRYFLAG} {USERS_DETAILS_COUNTRY}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Timezone}:</td>
-				<td>{USERS_DETAILS_TIMEZONE}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Birthdate}:</td>
-				<td>{USERS_DETAILS_BIRTHDATE}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Age}:</td>
-				<td>{USERS_DETAILS_AGE}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Gender}:</td>
-				<td>{USERS_DETAILS_GENDER}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Signature}:</td>
-				<td>{USERS_DETAILS_TEXT}</td>
-			</tr>
-			<tr>
-				<td>{PHP.L.Registered}:</td>
-				<td>{USERS_DETAILS_REGDATE}</td>
-			</tr>
-			<!-- IF {USERS_DETAILS_AVATAR} -->
-			<tr>
-				<td>{PHP.L.Avatar}:</td>
-				<td>{USERS_DETAILS_AVATAR}</td>
-			</tr>
-			<!-- ENDIF -->
-			<!-- IF {USERS_DETAILS_PHOTO} -->
-			<tr>
-				<td>{PHP.L.Photo}:</td>
-				<td>{USERS_DETAILS_PHOTO}</td>
-			</tr>
-			<!-- ENDIF -->
-		</table>
-	</div>
+<div class="container" id="adminmain">
+  
+  <div class="btn-group" style="float:right;">
+    <!-- BEGIN: USERS_DETAILS_ADMIN -->
+    <a class="btn" href="{USERS_DETAILS_ADMIN_EDIT_URL}" title="{PHP.L.Edit}">
+      <i class="icon-pencil"></i> {PHP.L.Edit}
+    </a>
+    <!-- END: USERS_DETAILS_ADMIN -->
+    <!-- IF {PHP|cot_module_active('pm')} -->
+    <a class="btn" href="{USERS_DETAILS_ID|cot_url('pm', 'm=send&to=$this')}" title="{PHP.L.pm_sendnew}">
+      <i class="icon-envelope"></i> {PHP.L.users_sendpm}
+    </a>
+    <!-- ENDIF -->
+  </div>
+  
+  <a href="{PHP|cot_url('users')}">{PHP.L.Users}</a> / {USERS_DETAILS_MAINGRP} / {USERS_DETAILS_NAME}
+
+  <div class="row" style="clear: both; padding-top: 20px;">
+    <table class="span8 table table-striped">
+      <tr>
+        <th>{PHP.L.Groupsmembership}:</th>
+        <td>{USERS_DETAILS_GROUPS}</td>
+      </tr>
+      <tr>
+        <th>{PHP.L.Country}:</th>
+        <td>{USERS_DETAILS_COUNTRYFLAG} {USERS_DETAILS_COUNTRY}</td>
+      </tr>
+      <tr>
+        <th>{PHP.L.Timezone}:</th>
+        <td>{USERS_DETAILS_TIMEZONE}</td>
+      </tr>
+      <tr>
+        <th>{PHP.L.Birthdate}:</th>
+        <td>{USERS_DETAILS_BIRTHDATE}</td>
+      </tr>
+      <tr>
+        <th>{PHP.L.Age}:</th>
+        <td>{USERS_DETAILS_AGE}</td>
+      </tr>
+      <tr>
+        <th>{PHP.L.Gender}:</th>
+        <td>{USERS_DETAILS_GENDER}</td>
+      </tr>
+      <tr>
+        <th>{PHP.L.Signature}:</th>
+        <td>{USERS_DETAILS_TEXT}</td>
+      </tr>
+      <tr>
+        <th>{PHP.L.Registered}:</th>
+        <td>{USERS_DETAILS_REGDATE}</td>
+      </tr>
+      <!-- IF {USERS_DETAILS_AVATAR} -->
+      <tr>
+        <th>{PHP.L.Avatar}:</th>
+        <td>{USERS_DETAILS_AVATAR}</td>
+      </tr>
+      <!-- ENDIF -->
+      <!-- IF {USERS_DETAILS_PHOTO} -->
+      <tr>
+        <th>{PHP.L.Photo}:</th>
+        <td>{USERS_DETAILS_PHOTO}</td>
+      </tr>
+      <!-- ENDIF -->
+    </table>
+  </div>
 </div>
+
 <!-- END: MAIN -->

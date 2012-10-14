@@ -1,5 +1,11 @@
+.modal form {
+  margin: 0;
+}
+.modal .control-group:last-child {
+  margin-bottom: 0;
+}
 #adminmain {
-  margin-top: 65px;
+  margin-top: 20px;
 }
 .btn.disabled, .btn[disabled] {
   opacity: 0.5;
@@ -33,6 +39,15 @@
   margin: 10px 0 5px 0;
   border-bottom: 1px #ddd solid;
   padding-bottom: 1px;
+}
+.table .progress {
+  margin: 0;
+  line-height: 22px;
+}
+.progress .amount {
+  position: absolute;
+  padding: 0 5px;
+  font-size: 10px;
 }
 .alert.alert-success {
   position: absolute;
