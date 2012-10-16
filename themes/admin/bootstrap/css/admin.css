@@ -19,7 +19,7 @@
 .btn-mini {
   line-height:20px;
 }
-.table input {
+.table input, .table select {
   margin:0;
 }
 .table-condensed.table-striped td {

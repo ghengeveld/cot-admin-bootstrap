@@ -161,6 +161,8 @@ $L['WithSelected'] = 'With selected';
 $L['Ratio'] = 'Ratio';
 $L['IPSearch_Search'] = 'Search for an IP in the users database:';
 $L['IPSearch_Results'] = 'Search results';
+$L['PurgeAll'] = 'Purge all';
+$L['PruneLowHits'] = 'Prune items with 5 hits or less';
 
 $L['ShowMore'] = 'Show more';
 $L['ShowLess'] = 'Show less';
