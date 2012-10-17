@@ -10,7 +10,7 @@
 
 <!-- BEGIN: DETAILS -->
 <div style="float:left; margin:15px;">
-  <!-- IF {ADMIN_EXTENSIONS_ICO} --> 
+  <!-- IF {ADMIN_EXTENSIONS_ICO} -->
   <img src="{ADMIN_EXTENSIONS_ICO}">
   <!-- ELSE -->
   <img src="{PHP.cfg.system_dir}/admin/img/plugins32.png">
@@ -70,7 +70,13 @@
       </tr>
       <tr>
         <th>{PHP.L.Version}:</th>
-        <td>{ADMIN_EXTENSIONS_VERSION}</td>
+        <td>
+          <!-- IF {PHP.isinstalled} AND {ADMIN_EXTENSIONS_VERSION_COMPARE} > 0 -->
+          <span class="badge badge-warning">{ADMIN_EXTENSIONS_VERSION_INSTALLED}</span>
+          <span class="badge badge-success">{ADMIN_EXTENSIONS_VERSION}</span>
+          <!-- ELSE -->
+          {ADMIN_EXTENSIONS_VERSION}
+          <!-- ENDIF --></td>
       </tr>
       <tr>
         <th>{PHP.L.Date}:</th>
@@ -88,6 +94,17 @@
         <th>{PHP.L.Notes}:</th>
         <td>{ADMIN_EXTENSIONS_NOTES}</td>
       </tr>
+      <!-- BEGIN: DEPENDENCIES -->
+      <tr>
+        <th>{ADMIN_EXTENSIONS_DEPENDENCIES_TITLE}:</th>
+        <td>
+            <!-- BEGIN: DEPENDENCIES_ROW -->
+            <a href="{ADMIN_EXTENSIONS_DEPENDENCIES_ROW_URL}"><span class="label label-<!-- IF {ADMIN_EXTENSIONS_DEPENDENCIES_ROW_CLASS} --><!-- IF {ADMIN_EXTENSIONS_DEPENDENCIES_ROW_CLASS} == 'highlight_red' -->important<!-- ELSE -->success<!-- ENDIF --><!-- ELSE -->info<!--ENDIF -->">{ADMIN_EXTENSIONS_DEPENDENCIES_ROW_NAME}</span></a> &nbsp;
+
+            <!-- END: DEPENDENCIES_ROW -->
+        </td>
+      </tr>
+      <!-- END: DEPENDENCIES -->
     </table>
   </div>
   <div class="span6">
@@ -248,7 +265,14 @@
         <a href="{ADMIN_EXTENSIONS_DETAILS_URL}"><strong>{ADMIN_EXTENSIONS_NAME}</strong></a>
       </td>
       <td>{ADMIN_EXTENSIONS_CODE_X}</td>
-      <td>{ADMIN_EXTENSIONS_VERSION}</td>
+      <td>
+        <!-- IF {PHP.part_status} != 3 AND {ADMIN_EXTENSIONS_VERSION_COMPARE} > 0 -->
+          <span class="badge badge-warning">{ADMIN_EXTENSIONS_VERSION_INSTALLED}</span>
+          <span class="badge badge-success">{ADMIN_EXTENSIONS_VERSION}</span>
+          <!-- ELSE -->
+          {ADMIN_EXTENSIONS_VERSION}
+          <!-- ENDIF -->
+      </td>
       <td>{ADMIN_EXTENSIONS_PARTSCOUNT}</td>
       <td>{ADMIN_EXTENSIONS_STATUS}</td>
       <td>
