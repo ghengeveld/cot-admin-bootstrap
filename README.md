@@ -17,8 +17,6 @@ Admin theme for Cotonti based on Twitter Bootstrap.
 Since v1.0, the theme has a static nav bar, which will scroll out of view. 
 If you want a navbar that is fixed to the top of the page, even when you scroll, follow these steps:
 
-Yes, this is a two step process:
-
 - In header.tpl, replace `navbar-static-top` with `navbar-fixed-top`
 - In admin.css, set `#adminmain` `margin-top` to `65px`
 
