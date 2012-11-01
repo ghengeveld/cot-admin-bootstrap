@@ -131,16 +131,16 @@
       <div class="row">
         <div class="span3">
           <div>{PHP.L.DisableGroup}:</div>
-          <label class="radio inline"><input type="radio" name="rdisabled" value="1"> Yes</label>
-          <label class="radio inline"><input type="radio" name="rdisabled" value="0" checked="checked"> No</label>
+          <label class="radio inline"><input type="radio" name="rdisabled" value="1"> {PHP.L.Yes}</label>
+          <label class="radio inline"><input type="radio" name="rdisabled" value="0" checked="checked"> {PHP.L.No}</label>
           <div class="help-text">{PHP.L.DisableGroupInfo}</div>
         </div>
       </div>
       <div class="row" style="margin-top:10px;">
         <div class="span3">
           <div>{PHP.L.MaintenanceAccess}:</div>
-          <label class="radio inline"><input type="radio" name="rmtmode" value="1"> Yes</label>
-          <label class="radio inline"><input type="radio" name="rmtmode" value="0" checked="checked"> No</label>
+          <label class="radio inline"><input type="radio" name="rmtmode" value="1"> {PHP.L.Yes}</label>
+          <label class="radio inline"><input type="radio" name="rmtmode" value="0" checked="checked"> {PHP.L.No}</label>
           <div class="help-text">{PHP.L.MaintenanceAccessInfo}</div>
         </div>
       </div>
@@ -148,8 +148,8 @@
       <div class="row" style="margin-top:10px;">
         <div class="span3">
           <div>{PHP.L.HideGroup}:</div>
-          <label class="radio inline"><input type="radio" name="rhidden" value="1"> Yes</label>
-          <label class="radio inline"><input type="radio" name="rhidden" value="0" checked="checked"> No</label>
+          <label class="radio inline"><input type="radio" name="rhidden" value="1"> {PHP.L.Yes}</label>
+          <label class="radio inline"><input type="radio" name="rhidden" value="0" checked="checked"> {PHP.L.No}</label>
           <div class="help-text">{PHP.L.HideGroupInfo}</div>
         </div>
       </div>
